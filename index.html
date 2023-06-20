@@ -59,7 +59,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
     <script>
     (async function() {
-        const { text } = await( await fetch(`/api/message`)).json();
+        const { text } = await( await fetch(`https://api.accesstrade.vn/v1/top_products?date_from=01-07-2020&date_to=20-07-2020`)).json();
         document.querySelector('#name').textContent = text;
     }());
     </script>

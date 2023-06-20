@@ -15,6 +15,7 @@
         <meta name="keywords" content="" />
         <meta name="robots" content="INDEX,FOLLOW" />
   <!-- End from accesstrade -->
+  <script src="fetchdatafromapi.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
               <script type="text/javascript">
@@ -52,17 +53,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     <div class="w3-center w3-padding-16">My Food</div>
   </div>
 </div>
-<main>
-    <h1>Vanilla JavaScript App</h1>
-    <p>Loading content from the API: <b id="name">...</b></p>
-</main>
-
-    <script>
-    (async function() {
-        const { text } = await( await fetch(`https://api.accesstrade.vn/v1/top_products?date_from=01-07-2020&date_to=20-07-2020`)).json();
-        document.querySelector('#name').textContent = text;
-    }());
-    </script>
+        <!-- Here a loader is created which
+             loads till response comes -->
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border"
+                 role="status" id="loading">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <h1>Registered Employees</h1>
+        <!-- table for showing data -->
+        <table id="employees"></table>
 <!-- !PAGE CONTENT! -->
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 

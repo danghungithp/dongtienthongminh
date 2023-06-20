@@ -1,6 +1,5 @@
 // api url
-const api_url =
-	"https://employeedetails.free.beeceptor.com/my/api/path";
+const api_url = "https://api.accesstrade.vn/v1/top_products";
 
 // Defining async function
 async function getapi(url) {

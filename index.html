@@ -29,6 +29,14 @@
                     script.async = true;
                     (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(script);
                       })();
+
+                $.ajaxSetup({
+                  headers : {
+                    'Authorization' : 'Authorization: Token TGHFVZbSBxPoAF-4_al6NU-h47fzcvyQ',
+                    'Content-Type': 'application/json'
+                  }
+                });
+                $.getJSON('https://api.accesstrade.vn/v1/top_products', function(json) { alert("Success"); }); 
             </script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
@@ -94,7 +102,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     <script type="text/javascript" src="https://static.accesstrade.vn/coupon/v2/js/popper.min.js"></script>
     <script type="text/javascript" src="https://static.accesstrade.vn/coupon/v2/js/bootstrap.min.js"></script>
     <script type="text/javascript" id="atScript6626" data-sub1="" data-sub2="" data-sub3="" data-sub4="" data-sub5="" data-utm-source="" data-utm-medium="" data-utm-campaign="" data-utm-content="" data-style-color="#fff" data-limit="10" data-row="3" data-filters='{"merchant":"4742147753565840242,4348611690224153209","category":"E-COMMERCE,MOBILE OFFER,","campaign":"4751584435713464237,4348614231480407268,"}' data-accesskey="4725587962428837650" src="https://static.accesstrade.vn/coupon/v2/js/main_at_v3.js"></script>
-      
+
+  <!-- !Những sản phẩm bán chạy nhất! -->
+<div class="mypanel"></div>
+<script>
+  $.getJSON('http://datahub.virk.dk/api/2/rest/package/smiley-kontrolrapporter', function(data) {
+
+    var resources = data.resources.map(resource => `<a href="${resource.url}">${resource.description}</a><br>`),
+        text = `<h2>${data.license_title}</h2><br>
+               ${resources.join('')}`;
+
+    $(".mypanel").html(text);
+  });
+</script>   
+<!-- !kết thúc Những sản phẩm bán chạy nhất! -->
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">

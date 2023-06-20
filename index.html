@@ -106,7 +106,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <!-- !Những sản phẩm bán chạy nhất! -->
 <div class="mypanel"></div>
 <script>
-  $.getJSON('http://datahub.virk.dk/api/2/rest/package/smiley-kontrolrapporter', function(data) {
+  $.getJSON('https://api.accesstrade.vn/v1/top_products', function(data) {
 
     var resources = data.resources.map(resource => `<a href="${resource.url}">${resource.description}</a><br>`),
         text = `<h2>${data.license_title}</h2><br>
